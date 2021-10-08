@@ -1,0 +1,20 @@
+<div class="container">
+  <section class="work-progress"></section>
+  <section class="steps">
+    <div class="step-sections" *ngFor="let step of steps; let i = index">
+      <span
+        (click)="onSelect(step)"
+        class="step"
+        [ngClass]="{
+          selected: isSelected(step),
+          completed: step.status
+        }"
+        >{{ step.id }}</span
+      >
+      <p>{{ step.name }}</p>
+    </div>
+  </section>
+  <section>
+    <h3 class="completionTask">{{ taskPercent }}</h3>
+  </section>
+</div>
